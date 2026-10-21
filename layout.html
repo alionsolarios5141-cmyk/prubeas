@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Cuero & Alma: artículos de cuero de alta calidad, accesorios, sillas de montar y exportación de cuero."
+  >
+  <title>{% block titulo %}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/static/js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- Enlace para usuarios de teclado: mejora la navegación accesible -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Header: contiene la identidad y navegación principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="#inicio" aria-label="Cuero & Alma, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path
+              d="M18 10h28v44H18z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M24 22h16M24 30h16M24 38h10"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M38 10v12h8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+          </svg>
+        </span>
+
+        <span>
+          <strong>Cuero &amp; Alma</strong>
+          <small>Artesanía que perdura</small>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa: visible únicamente en pantallas pequeñas -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Abrir menú de navegación"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+          {% if current_user.is_authenticated and current_user.perfil == 'A' %}
+          {% include 'components/navbar_admin.html' %}
+          {% else %}
+          {% include 'components/navbar.html' %}
+          {% endif %}
+
+      <!-- Nav: navegación principal del sitio -->
+    </div>
+  </header>
+
+    <main id="contenido">
+    {% block contenido %} {% endblock %}
+    </main>
+  <!-- Footer: información secundaria, enlaces y redes -->
+ {% include 'components/footer.html' %}
+
+  {% block scripts %} {% endblock %}
+
+  <!-- Modal de inicio de sesión (independiente) -->
+  <div
+    id="login-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="login-modal-title"
+    aria-describedby="login-modal-description"
+    hidden
+  >
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">CUERO &amp; ALMA</p>
+
+      <h2 id="login-modal-title">Iniciar sesión</h2>
+
+      <p id="login-modal-description">
+        Ingresa tus datos para acceder a tu cuenta.
+      </p>
+
+      <form id="login-form" action="{{ url_for('signin') }}" method="post" novalidate>
+        <div class="form-field">
+          <label for="login-email">Correo electrónico</label>
+          <input
+            id="login-email"
+            name="correo"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input
+            id="login-password"
+            name="clave"
+            type="password"
+            autocomplete="current-password"
+            minlength="6"
+            placeholder="••••••••"
+            required
+          >
+        </div>
+
+        <div class="form-check">
+          <input id="login-remember" name="remember" type="checkbox">
+          <label for="login-remember">Recordarme</label>
+
+          <a class="text-link modal-forgot" href="#">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <button class="btn btn-dark btn-full" type="submit">
+          Iniciar sesión
+        </button>
+
+        <p
+          id="login-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="modal-switch">
+          ¿No tienes cuenta?
+          <button type="button" class="link-button" data-switch-modal="register-modal">
+            Regístrate
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de registro (independiente) -->
+  <div
+    id="register-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="register-modal-title"
+    aria-describedby="register-modal-description"
+    hidden
+  >
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">CUERO &amp; ALMA</p>
+
+      <h2 id="register-modal-title">Crear una cuenta</h2>
+
+      <p id="register-modal-description">
+        Regístrate para recibir novedades de Cuero &amp; Alma.
+      </p>
+
+      <form action="{{ url_for('signup') }}" method="post" id="register-form" novalidate>
+        <div class="form-field">
+          <label for="register-name">Nombre completo</label>
+          <input
+            id="register-name"
+            name="nombre"
+            type="text"
+            autocomplete="name"
+            placeholder="Tu nombre"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-email">Correo electrónico</label>
+          <input
+            id="register-email"
+            name="correo"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-password">Contraseña</label>
+          <input
+            id="register-password"
+            name="clave"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            placeholder="Mínimo 6 caracteres"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-password-confirm">Confirmar contraseña</label>
+          <input
+            id="register-password-confirm"
+            name="claveConfirm"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            placeholder="Repite tu contraseña"
+            required
+          >
+        </div>
+
+        <div class="form-check">
+          <input id="register-terms" name="terms" type="checkbox" required>
+          <label for="register-terms">
+            Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <button class="btn btn-dark btn-full" type="submit">
+          Crear cuenta
+        </button>
+
+        <p
+          id="register-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="modal-switch">
+          ¿Ya tienes cuenta?
+          <button type="button" class="link-button" data-switch-modal="login-modal">
+            Inicia sesión
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

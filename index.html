@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Cuero & Alma: artículos de cuero de alta calidad, accesorios, sillas de montar y exportación de cuero."
+  >
+  <title>Cuero & Alma | Artesanía en cuero de alta calidad</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Enlace para usuarios de teclado: mejora la navegación accesible -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Header: contiene la identidad y navegación principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="#inicio" aria-label="Cuero & Alma, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path
+              d="M18 10h28v44H18z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M24 22h16M24 30h16M24 38h10"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M38 10v12h8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+          </svg>
+        </span>
+
+        <span>
+          <strong>Cuero &amp; Alma</strong>
+          <small>Artesanía que perdura</small>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa: visible únicamente en pantallas pequeñas -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Abrir menú de navegación"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav: navegación principal del sitio -->
+      <nav id="main-navigation" class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#calidad">Nuestra calidad</a></li>
+          <li><a href="#exportacion">Exportación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-modal="login-modal"
+          >
+            Iniciar Sesión
+          </button>
+
+          <button
+            class="btn btn-accent"
+            type="button"
+            data-modal="register-modal"
+          >
+            Registrarse
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- Hero: sección introductoria principal -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <p class="eyebrow">CUERO DE ALTA CALIDAD</p>
+
+          <h1 id="hero-title">
+            La tradición del cuero,
+            <span>hecha para durar.</span>
+          </h1>
+
+          <p class="hero-description">
+            Descubre artículos de cuero elaborados con carácter, precisión
+            y materiales seleccionados. Desde accesorios artesanales hasta
+            sillas de montar y cuero para exportación.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">
+              Explorar productos
+            </a>
+
+            <a class="text-link" href="#calidad">
+              Conoce nuestra calidad
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <ul class="hero-benefits" aria-label="Principales beneficios">
+            <li>
+              <strong>100%</strong>
+              <span>Cuero seleccionado</span>
+            </li>
+            <li>
+              <strong>Artesanal</strong>
+              <span>Trabajo cuidadoso</span>
+            </li>
+            <li>
+              <strong>Global</strong>
+              <span>Exportación disponible</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Figure: imagen/representación visual principal con descripción -->
+        <figure class="hero-figure">
+          <div class="leather-display">
+            <div class="leather-card">
+              <div class="stitching" aria-hidden="true"></div>
+
+              <div class="holster-shape" aria-hidden="true">
+                <div class="holster-strap"></div>
+                <div class="holster-body"></div>
+              </div>
+
+              <div class="display-label">
+                <span>CUERO &amp; ALMA</span>
+                <small>HECHO CON CARÁCTER</small>
+              </div>
+            </div>
+          </div>
+
+          <figcaption>
+            Detalle inspirado en nuestros artículos de cuero artesanal.
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- Productos: sección con artículos independientes -->
+    <section id="productos" class="products-section" aria-labelledby="products-title">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">NUESTRO CATÁLOGO</p>
+          <h2 id="products-title">Piezas con propósito</h2>
+          <p>
+            Soluciones de cuero para quienes valoran la resistencia,
+            funcionalidad y una estética atemporal.
+          </p>
+        </div>
+
+        <div class="product-grid">
+
+          <article class="product-card">
+            <div class="product-icon" aria-hidden="true">▱</div>
+            <p class="card-number">01</p>
+            <h3>Fundas y accesorios</h3>
+            <p>
+              Fundas para celular y otros accesorios diseñados para
+              proteger tus objetos cotidianos con estilo.
+            </p>
+            <a href="#contacto" class="card-link">
+              Solicitar información <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="product-card featured">
+            <div class="product-icon" aria-hidden="true">⌁</div>
+            <p class="card-number">02</p>
+            <h3>Equipo ecuestre</h3>
+            <p>
+              Sillas de montar y piezas para el mundo ecuestre, combinando
+              funcionalidad, tradición y trabajo artesanal.
+            </p>
+            <a href="#contacto" class="card-link">
+              Conocer colección <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon" aria-hidden="true">◈</div>
+            <p class="card-number">03</p>
+            <h3>Cinturones y marroquinería</h3>
+            <p>
+              Diseños resistentes y versátiles pensados para acompañarte
+              durante años.
+            </p>
+            <a href="#contacto" class="card-link">
+              Ver opciones <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon" aria-hidden="true">◇</div>
+            <p class="card-number">04</p>
+            <h3>Cuero para exportación</h3>
+            <p>
+              Cuero seleccionado para personas y negocios que buscan
+              materia prima de alta calidad.
+            </p>
+            <a href="#exportacion" class="card-link">
+              Solicitar cotización <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Calidad: sección de beneficios -->
+    <section id="calidad" class="quality-section" aria-labelledby="quality-title">
+      <div class="container quality-grid">
+
+        <div>
+          <p class="eyebrow">POR QUÉ CUERO &amp; ALMA</p>
+
+          <h2 id="quality-title">
+            El valor está en cada detalle.
+          </h2>
+
+          <p class="section-intro">
+            Creemos que un buen producto de cuero debe sentirse bien,
+            resistir el uso y mejorar con el paso del tiempo.
+          </p>
+
+          <ol class="process-list">
+            <li>
+              <span class="step-number">01</span>
+              <div>
+                <h3>Selección</h3>
+                <p>Elegimos materiales pensando en resistencia y acabado.</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="step-number">02</span>
+              <div>
+                <h3>Elaboración</h3>
+                <p>Cuidamos cada pieza durante su proceso de fabricación.</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="step-number">03</span>
+              <div>
+                <h3>Entrega</h3>
+                <p>Preparamos pedidos nacionales y solicitudes de exportación.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="quality-aside" aria-labelledby="aside-title">
+          <div class="aside-badge">DESTACADO</div>
+
+          <h2 id="aside-title">
+            ¿Buscas cuero para tu próximo proyecto?
+          </h2>
+
+          <p>
+            Cuéntanos qué necesitas y te ayudaremos a encontrar una
+            opción adecuada para tu proyecto o negocio.
+          </p>
+
+          <a class="btn btn-dark" href="#contacto">
+            Solicitar información
+          </a>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- Exportación: sección independiente -->
+    <section id="exportacion" class="export-section" aria-labelledby="export-title">
+      <div class="container export-grid">
+
+        <div class="export-content">
+          <p class="eyebrow">ALCANCE INTERNACIONAL</p>
+
+          <h2 id="export-title">
+            Del taller a nuevos destinos.
+          </h2>
+
+          <p>
+            Ofrecemos cuero de alta calidad para clientes que requieren
+            materia prima confiable. Ponte en contacto con nosotros para
+            consultar disponibilidad, especificaciones y posibilidades
+            de exportación.
+          </p>
+
+          <a href="#contacto" class="btn btn-primary">
+            Hablar con nuestro equipo
+          </a>
+        </div>
+
+        <div class="export-stats" aria-label="Características del servicio">
+          <div>
+            <strong>01</strong>
+            <span>Calidad seleccionada</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Atención personalizada</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Opciones de exportación</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonios: artículos independientes -->
+    <section class="testimonials-section" aria-labelledby="testimonials-title">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">LO QUE VALORAMOS</p>
+          <h2 id="testimonials-title">Hecho para acompañarte</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <article class="testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>
+              “Buscaba un producto resistente y con personalidad.
+              La atención y el acabado hicieron toda la diferencia.”
+            </blockquote>
+            <cite>— Cliente de Cuero &amp; Alma</cite>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>
+              “La calidad del material fue justo lo que necesitábamos
+              para nuestro proyecto.”
+            </blockquote>
+            <cite>— Cliente mayorista</cite>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto/newsletter: formulario accesible -->
+    <section id="contacto" class="contact-section" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+
+        <div>
+          <p class="eyebrow">MANTENTE EN CONTACTO</p>
+
+          <h2 id="contact-title">
+            Recibe novedades de Cuero &amp; Alma.
+          </h2>
+
+          <p>
+            Suscríbete para conocer nuevos productos, disponibilidad
+            y novedades de nuestra tienda.
+          </p>
+        </div>
+
+        <form id="newsletter-form" class="newsletter-form" novalidate>
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="tu@email.com"
+              required
+              aria-describedby="email-help form-message"
+            >
+
+            <small id="email-help">
+              No compartiremos tu correo con terceros.
+            </small>
+
+            <p
+              id="form-message"
+              class="form-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <button class="btn btn-dark" type="submit">
+            Suscribirme
+          </button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer: información secundaria, enlaces y redes -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">CA</span>
+          <span>
+            <strong>Cuero &amp; Alma</strong>
+            <small>Artesanía que perdura</small>
+          </span>
+        </a>
+
+        <p>
+          Cuero seleccionado, tradición y carácter en cada pieza.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h2>Explora</h2>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#calidad">Calidad</a></li>
+          <li><a href="#exportacion">Exportación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="#contacto">Solicitar información</a></li>
+          <li><a href="#contacto">Cotizaciones</a></li>
+          <li><a href="#contacto">Atención a clientes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Síguenos</h2>
+        <ul class="social-links">
+          <li><a href="#" aria-label="Instagram de Cuero & Alma">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook de Cuero & Alma">Facebook</a></li>
+          <li><a href="#" aria-label="TikTok de Cuero & Alma">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        &copy; <span id="current-year"></span> Cuero &amp; Alma. Todos los derechos reservados.
+      </p>
+
+      <div>
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de inicio de sesión (independiente) -->
+  <div
+    id="login-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="login-modal-title"
+    aria-describedby="login-modal-description"
+    hidden
+  >
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">CUERO &amp; ALMA</p>
+
+      <h2 id="login-modal-title">Iniciar sesión</h2>
+
+      <p id="login-modal-description">
+        Ingresa tus datos para acceder a tu cuenta.
+      </p>
+
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="login-email">Correo electrónico</label>
+          <input
+            id="login-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input
+            id="login-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            minlength="6"
+            placeholder="••••••••"
+            required
+          >
+        </div>
+
+        <div class="form-check">
+          <input id="login-remember" name="remember" type="checkbox">
+          <label for="login-remember">Recordarme</label>
+
+          <a class="text-link modal-forgot" href="#">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <button class="btn btn-dark btn-full" type="submit">
+          Iniciar sesión
+        </button>
+
+        <p
+          id="login-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="modal-switch">
+          ¿No tienes cuenta?
+          <button type="button" class="link-button" data-switch-modal="register-modal">
+            Regístrate
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de registro (independiente) -->
+  <div
+    id="register-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="register-modal-title"
+    aria-describedby="register-modal-description"
+    hidden
+  >
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">CUERO &amp; ALMA</p>
+
+      <h2 id="register-modal-title">Crear una cuenta</h2>
+
+      <p id="register-modal-description">
+        Regístrate para recibir novedades de Cuero &amp; Alma.
+      </p>
+
+      <form id="register-form" novalidate>
+        <div class="form-field">
+          <label for="register-name">Nombre completo</label>
+          <input
+            id="register-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="Tu nombre"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-email">Correo electrónico</label>
+          <input
+            id="register-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-password">Contraseña</label>
+          <input
+            id="register-password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            placeholder="Mínimo 6 caracteres"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="register-password-confirm">Confirmar contraseña</label>
+          <input
+            id="register-password-confirm"
+            name="passwordConfirm"
+            type="password"
+            autocomplete="new-password"
+            minlength="6"
+            placeholder="Repite tu contraseña"
+            required
+          >
+        </div>
+
+        <div class="form-check">
+          <input id="register-terms" name="terms" type="checkbox" required>
+          <label for="register-terms">
+            Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <button class="btn btn-dark btn-full" type="submit">
+          Crear cuenta
+        </button>
+
+        <p
+          id="register-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="modal-switch">
+          ¿Ya tienes cuenta?
+          <button type="button" class="link-button" data-switch-modal="login-modal">
+            Inicia sesión
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

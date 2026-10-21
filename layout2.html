@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Cuero & Alma: artículos de cuero de alta calidad, accesorios, sillas de montar y exportación de cuero."
+  >
+  <title>{% block titulo %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js')}}" defer></script>
+</head>
+
+<body>
+  <!-- Enlace para usuarios de teclado: mejora la navegación accesible -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Header: contiene la identidad y navegación principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="#inicio" aria-label="Cuero & Alma, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path
+              d="M18 10h28v44H18z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M24 22h16M24 30h16M24 38h10"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M38 10v12h8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+            />
+          </svg>
+        </span>
+
+        <span>
+          <strong>Cuero &amp; Alma</strong>
+          <small>Artesanía que perdura</small>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa: visible únicamente en pantallas pequeñas -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Abrir menú de navegación"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav: navegación principal del sitio -->
+      {% include 'components/navbar.html' %}
+    </div>
+  </header>
+
+  <main id="contenido">
+    {% block contenido %} {% endblock %}
+  </main>
+
+  <!-- Footer: información secundaria, enlaces y redes -->
+  {% include 'components/footer.html' %}
+
+  {% block scripts %} {% endblock %}
+
+  <!-- Modal reutilizable para autenticación -->
+  <div
+    id="auth-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-describedby="modal-description"
+    hidden
+  >
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        &times;
+      </button>
+
+      <p class="eyebrow">CUERO &amp; ALMA</p>
+
+      <h2 id="modal-title">Bienvenido</h2>
+
+      <p id="modal-description">
+        Completa tus datos para continuar.
+      </p>
+
+      <form id="auth-form">
+        <div class="form-field">
+          <label for="auth-name">Nombre</label>
+          <input
+            id="auth-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="auth-email">Correo electrónico</label>
+          <input
+            id="auth-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <button class="btn btn-dark btn-full" type="submit">
+          Continuar
+        </button>
+
+        <p
+          id="auth-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
